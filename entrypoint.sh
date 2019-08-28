@@ -12,7 +12,16 @@ cd "$GITHUB_WORKSPACE"
 # that's a problem or not. This persistence behavior is the main reason there is
 # a single action that installs, builds, and tests a package, instead of
 # separate actions for each of those steps.
-raco pkg install --name "$INPUT_NAME" --batch --auto --link "$INPUT_DIRECTORY"
+if [ "$INPUT_DIRECTORY" -eq "." ]
+then
+  # installing a linked package with source directory "." raises an error for
+  # some bizarre reason, even when the package's name is specified explicitly
+  # with --name. This is especially strange because source directories like
+  # "./foo" work just fine.
+  raco pkg install --name "$INPUT_NAME" --batch --auto --link
+else
+  raco pkg install --name "$INPUT_NAME" --batch --auto --link "$INPUT_DIRECTORY"
+fi
 
 # We use --drdr to get the same defaults as racket's other standard CI systems,
 # including DrDr and the official package catalog build service. Beware that
