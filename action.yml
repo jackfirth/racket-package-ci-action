@@ -1,11 +1,12 @@
-name: racket-package-ci
+name: Racket Package CI
 author: Jack Firth
-description: An action that installs, builds, and tests a Racket package.
-# TODO: consider adding an input for controlling which package catalogs to use
-# TODO: consider adding an input for controlling which Racket version to use
+description: >-
+  Install, build, and test a package for the Racket programming language.
 inputs:
   name:
-    description: The name that the package should be given.
+    description: >-
+      The name that the package should be given. This is used as the `--name`
+      argument to `raco pkg install`.
     required: true
   directory:
     description: >-
