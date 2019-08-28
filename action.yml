@@ -1,0 +1,25 @@
+name: racket-package-ci
+author: Jack Firth
+description: An action that installs, builds, and tests a Racket package.
+# TODO: consider adding an input for controlling which package catalogs to use
+# TODO: consider adding an input for controlling which Racket version to use
+inputs:
+  name:
+    description: The name that the package should be given.
+    required: true
+  directory:
+    description: >-
+      The package's root directory, relative to the root of the repository.
+      Should never include a leading slash. For example, a repository with
+      foo-lib, foo-test, and foo-doc packages would use "foo-lib", "foo-test",
+      or "foo-doc" to specify the input package directory. The default value,
+      ".", is intended to be used with single-package repositories.
+    required: false
+    default: .
+outputs:
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: play
+  color: red
