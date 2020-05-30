@@ -17,12 +17,12 @@ repository.
 
 Building and testing occurs in a Docker image with Minimal Racket installed.
 Currently, packages are always built and tested using the latest released
-version of Racket as determined by the [`jackfirth/racket:latest`][racket-image]
+version of Racket as determined by the [`racket/racket:latest`][racket-image]
 Docker Hub image. If you need support for more versions of Racket or non-minimal
 Racket, please reach out to me by opening an [issue][repo-issues] and telling me
 more about your use case.
 
 [github-action]: https://github.com/features/actions
 [racket]: https://racket-lang.org/
-[racket-image]: https://hub.docker.com/r/jackfirth/racket
+[racket-image]: https://hub.docker.com/r/racket/racket
 [repo-issues]: https://github.com/jackfirth/racket-package-ci-action/issues
