@@ -17,7 +17,6 @@ inputs:
       ".", is intended to be used with single-package repositories.
     required: false
     default: .
-outputs:
 runs:
   using: docker
   image: Dockerfile
