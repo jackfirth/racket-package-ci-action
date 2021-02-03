@@ -50,7 +50,7 @@ if [ -n "$INPUT_DOC_DIRECTORY" ] && [ -n "$INPUT_SCRIBBLE_FILE" ] \
 	# This is a noop in the case that there isn't one.
 	cd $(find . -maxdepth 1 -type d | tail -n1) || exit 1
         git config --global user.email $(git show -s --format=format:%ae) 
-        git config --global user.name $(git show -s --format=formmat:%an)
+        git config --global user.name $(git show -s --format=format:%an)
 	git init
 	git add .
 	git commit -m 'Deploy to Github Pages'
