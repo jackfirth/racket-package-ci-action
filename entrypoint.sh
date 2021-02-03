@@ -39,7 +39,6 @@ if [ -n "$INPUT_DOC_DIRECTORY" ] && [ -n "$INPUT_SCRIBBLE_FILE" ] \
        && [ -n "$INPUT_MAIN_REF" ] && [ -n "$INPUT_GITHUB_TOKEN" ]; then
     if [[ -z "$GITHUB_BASE_REF" ]] && [ "$INPUT_MAIN_REF" == "$GITHUB_REF" ]; then
         echo "Uploading documentation under ${INPUT_DOC_DIRECTORY}..."
-	ls -alt
 	raco scribble +m --htmls \
 	     --redirect-main http://pkg-build.racket-lang.org/doc/ \
 	     --dest ./docs \
