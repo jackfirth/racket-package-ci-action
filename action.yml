@@ -25,13 +25,13 @@ inputs:
   github_token:
     description: >-
       The Github token used to deploy the Github pages — Github already generates this in
-             the workflow parameter "secrets.GITHUB_TOKEN".
+      the workflow parameter "secrets.GITHUB_TOKEN".
     required: false
   main_ref:
     description: >-
       The main branch where a push will trigger the Github Pages build. This is of the form
-             "refs/heads/main", with the branch name substituted for the last item in the path. Note that
-             there is no leading slash.
+      "refs/heads/main", with the branch name substituted for the last item in the path. Note that
+      there is no leading slash.
     required: false
   scribble_file:
     description: >-
