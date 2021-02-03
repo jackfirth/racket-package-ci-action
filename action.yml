@@ -17,6 +17,26 @@ inputs:
       ".", is intended to be used with single-package repositories.
     required: false
     default: .
+  doc_directory:
+    description: >-
+      The documentation directory to look for scribble docs, relative to the root of the
+      repository.
+    required: false
+  github_token:
+    description: >-
+      The Github token used to deploy the Github pages — Github already generates this in
+             the workflow parameter "secrets.GITHUB_TOKEN".
+    required: false
+  main_ref:
+    description: >-
+      The main branch where a push will trigger the Github Pages build. This is of the form
+             "refs/heads/main", with the branch name substituted for the last item in the path. Note that
+             there is no leading slash.
+    required: false
+  scribble_file:
+    description: >-
+      The scribble file to use as an entry-point into the script, without the .scribl extension.
+    required: false
 runs:
   using: docker
   image: Dockerfile
