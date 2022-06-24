@@ -3,6 +3,9 @@
 A [GitHub Action][github-action] for building and testing [Racket][racket]
 packages.
 
+Consider using the [Bogdanp/setup-racket](https://github.com/Bogdanp/setup-racket)
+action instead. It's far more flexible and essentially obsoletes this action.
+
 ## Action inputs
 
 Only one input is required: `name`, for the name of the package. This is used
